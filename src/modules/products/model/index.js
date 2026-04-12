@@ -6,6 +6,7 @@ const productSchema = new Schema({
     title: { type: String, require: true },
     desc: { type: String, require: true, },
     price: { type: String, require: true },
+    category: { type: mongoose.Schema.ObjectId, ref: "category",require: true }
 })
 
 

@@ -4,6 +4,10 @@ const getDataDB = async () => {
     const ahmed = await ProdItems.find()
     return ahmed
 }
+const getDataDBPopulate = async () => {
+    const ahmed = await ProdItems.find().populate("category")
+    return ahmed
+}
 
 const postDataDB = async (data) => {
     const ahmed = await new ProdItems(data).save()
@@ -19,6 +23,7 @@ const updateDataDB = async (id, data) => {
 }
 
 export {
+    getDataDBPopulate,
     postDataDB,
     getDataDB,
     delDataDB,
