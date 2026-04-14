@@ -3,7 +3,7 @@ import getData from "../services/get.js"
 
 const getControllers = async (req, res) => {
     try {
-        const ahmed = await getData()
+        const ahmed = await getData(req.query)
         console.log("ahmed===>", ahmed)
         res.status(200).send({ status: 200, user: ahmed, msg: "product Fetched" })
     } catch (error) {

@@ -8,6 +8,10 @@ const getDataDBPopulate = async () => {
     const ahmed = await ProdItems.find().populate("category")
     return ahmed
 }
+const getAggregate = async (query) => {
+    const ahmed = await ProdItems.aggregate(query)
+    return ahmed
+}
 
 const postDataDB = async (data) => {
     const ahmed = await new ProdItems(data).save()
@@ -28,4 +32,5 @@ export {
     getDataDB,
     delDataDB,
     updateDataDB,
+    getAggregate
 }
